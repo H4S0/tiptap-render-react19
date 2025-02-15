@@ -1,5 +1,20 @@
 # React + TypeScript + Vite
 
+The TipTapRenderer component uses a recursive approach to render TipTap documents. Based on the type of each node, it determines which HTML element should be rendered.
+
+Rendering Logic:
+Document Node (doc): The root node containing the whole content.
+
+It iterates over its content property and recursively renders its children nodes.
+Paragraph Node (paragraph): A simple text block.
+
+It maps over its content and joins all text nodes to render as a paragraph (<p>).
+Heading Node (heading): A heading element (<h1>, <h2>, etc.) based on the level attribute.
+
+Dynamically selects the heading tag based on the level.
+Recursive Rendering:
+The component uses a function called renderContent that checks the node type and recursively renders each type of node based on its type, such as paragraph, heading, or other potential nodes.
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
